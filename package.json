@@ -1,0 +1,50 @@
+{
+  "name": "playwright-enterprise-qa-framework",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:app": "node src/demo-server/server.js",
+    "start:app": "node src/demo-server/server.js",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --project=chromium --grep @ui",
+    "test:api": "playwright test --project=chromium --grep @api",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:regression": "playwright test --grep @regression",
+    "test:debug": "playwright test --debug",
+    "test:trace": "playwright test --trace on",
+    "test:shard": "playwright test --shard=1/4",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit",
+    "docker:build": "docker build -t playwright-qa-framework .",
+    "docker:test": "docker run --rm -v $(pwd)/artifacts:/app/artifacts playwright-qa-framework"
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "automation",
+    "qa",
+    "framework"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "@types/uuid": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.4.0",
+    "typescript": "^5.7.2"
+  }
+}
