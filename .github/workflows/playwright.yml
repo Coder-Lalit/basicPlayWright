@@ -17,7 +17,6 @@ jobs:
           node-version: 20
       - run: npm ci
       - run: npx playwright install --with-deps chromium firefox webkit
-      - run: npm run dev:app &
       - run: npx playwright test --grep @smoke --project=chromium
       - uses: actions/upload-artifact@v4
         if: always()
@@ -39,7 +38,6 @@ jobs:
           node-version: 20
       - run: npm ci
       - run: npx playwright install --with-deps chromium firefox webkit
-      - run: npm run dev:app &
       - run: npx playwright test --project=chromium --grep @regression --shard=${{ matrix.shard }}/4
       - uses: actions/upload-artifact@v4
         if: always()
