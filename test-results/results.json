@@ -4,9 +4,8 @@
       "/opt/homebrew/Cellar/node/26.8.2/bin/node",
       "/Users/lalitdas/basicPlayWright/node_modules/.bin/playwright",
       "test",
-      "--project=chromium",
-      "--grep",
-      "@api"
+      "tests/ui/products.spec.ts",
+      "--project=chromium"
     ],
     "configFile": "/Users/lalitdas/basicPlayWright/playwright.config.ts",
     "rootDir": "/Users/lalitdas/basicPlayWright/tests",
@@ -128,23 +127,24 @@
   },
   "suites": [
     {
-      "title": "api/users-api.spec.ts",
-      "file": "api/users-api.spec.ts",
+      "title": "ui/products.spec.ts",
+      "file": "ui/products.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "@api",
-          "file": "api/users-api.spec.ts",
+          "title": "@ui @regression",
+          "file": "ui/products.spec.ts",
           "line": 4,
           "column": 6,
           "specs": [
             {
-              "title": "creates and fetches users via API",
+              "title": "user can create a product from the UI",
               "ok": true,
               "tags": [
-                "api"
+                "ui",
+                "regression"
               ],
               "tests": [
                 {
@@ -158,12 +158,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 27,
+                      "duration": 430,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-21T18:25:18.922Z",
+                      "startTime": "2026-09-23T18:17:44.725Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -171,16 +171,17 @@
                   "status": "expected"
                 }
               ],
-              "id": "d0c839590b039c8a3413-2b9bf1409479d85643d3",
-              "file": "api/users-api.spec.ts",
+              "id": "f800cd260b5bb223e3c3-7ff2552f9f35e585b3a2",
+              "file": "ui/products.spec.ts",
               "line": 5,
               "column": 7
             },
             {
-              "title": "updates and deletes a user via API",
+              "title": "user can search for a product",
               "ok": true,
               "tags": [
-                "api"
+                "ui",
+                "regression"
               ],
               "tests": [
                 {
@@ -194,12 +195,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 1,
                       "status": "passed",
-                      "duration": 30,
+                      "duration": 318,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-21T18:25:18.921Z",
+                      "startTime": "2026-09-23T18:17:44.724Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -207,9 +208,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "d0c839590b039c8a3413-c154864f24df11933efd",
-              "file": "api/users-api.spec.ts",
-              "line": 17,
+              "id": "f800cd260b5bb223e3c3-a767a6d0db411a6f2cee",
+              "file": "ui/products.spec.ts",
+              "line": 19,
               "column": 7
             }
           ]
@@ -219,8 +220,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-09-21T18:25:18.100Z",
-    "duration": 887.6740000000001,
+    "startTime": "2026-09-23T18:17:44.199Z",
+    "duration": 1126.954,
     "expected": 2,
     "skipped": 0,
     "unexpected": 0,

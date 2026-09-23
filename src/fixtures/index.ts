@@ -60,8 +60,8 @@ export const test = base.extend<FixtureOptions>({
   usersPage: async ({ page }, use) => {
     await use(new UsersPage(page));
   },
-  productsPage: async ({ page }, use) => {
-    await use(new ProductsPage(page));
+  productsPage: async ({ authenticatedPage }, use) => {
+    await use(new ProductsPage(authenticatedPage));
   },
   testData: async ({}, use) => {
     await use({

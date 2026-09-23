@@ -4,7 +4,7 @@ import { createProductPayload } from '@/test-data/users';
 test.describe('@ui @regression', () => {
   test('user can create a product from the UI', async ({ authenticatedPage, productsPage }) => {
     await authenticatedPage.goto('http://localhost:4200');
-    await authenticatedPage.getByRole('link', { name: 'Products' }).click();
+    await expect(authenticatedPage.getByRole('link', { name: 'Products' })).toBeVisible();
     const payload = createProductPayload();
     await productsPage.createProduct({
       name: payload.name,

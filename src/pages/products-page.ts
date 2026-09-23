@@ -8,7 +8,10 @@ export class ProductsPage {
   }
 
   async createProduct(product: Record<string, string | number>) {
+    await this.openProducts();
+    await expect(this.page.getByTestId('create-product-button')).toBeVisible();
     await this.page.getByTestId('create-product-button').click();
+    await expect(this.page.getByTestId('product-form')).toBeVisible();
     await this.page.getByTestId('product-name').fill(String(product.name));
     await this.page.getByTestId('product-category').fill(String(product.category));
     await this.page.getByTestId('product-price').fill(String(product.price));
